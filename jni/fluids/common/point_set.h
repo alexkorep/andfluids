@@ -78,6 +78,7 @@
 	class PointSet : public GeomX {
 	public:
 		PointSet ();
+		virtual ~PointSet() {}
 
 		// Point Sets
 		

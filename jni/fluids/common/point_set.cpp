@@ -253,6 +253,13 @@ void PointSet::AddVolume ( Vector3DF min, Vector3DF max, float spacing )
 
 void PointSet::Draw ( float* view_mat, float rad )
 {
+	const char* dat = mBuf[0].data;
+	for (int n=0; n < NumPoints(); n++) {
+		const Point* p = (Point*) dat;
+
+		dat += mBuf[0].stride;
+	}
+
 	/*
 	char* dat;
 	Point* p;

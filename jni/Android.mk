@@ -4,7 +4,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE 	:= andfluids
 #LOCAL_SRC_FILES := Main.cpp
-LOCAL_SRC_FILES := plasma.cpp
+LOCAL_SRC_FILES := main.cpp
 LOCAL_LDLIBS    := -lm -llog -landroid
 LOCAL_CFLAGS    := -Werror -g -ggdb -O0
 
