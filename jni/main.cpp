@@ -1,6 +1,6 @@
 /*
   AndFluids, Android port of FLUIDS - SPH Fluid Simulator
-  Copyright (C) 2012 Alexey Korepanov
+  Copyright (C) 2012 Alexey Korepanov, alexkorep@gmail.com
 
   ZLib license
   This software is provided 'as-is', without any express or implied
@@ -25,17 +25,16 @@
 #include <android/native_window.h>
 #include <android/input.h>
 #include <android/looper.h>
-#include <android/log.h>
 
 #include <stdio.h>
 #include <stdlib.h>
 
 #include "fluids/fluids/fluid_system.h"
+#include "GraphicsService.h"
 
-#define  LOG_TAG    "andfluids"
-#define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
-#define  LOGW(...)  __android_log_print(ANDROID_LOG_WARN,LOG_TAG,__VA_ARGS__)
-#define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
+#include "log.h"
+
+const int psys_nmax = 512;
 
 /**
  * @class MyFluidSystem
@@ -60,30 +59,26 @@ public:
 	{
 		normalizeCoords(*buffer);
 
-		uint16_t* pixels = (uint16_t*)buffer->bits;
+		//const uint16_t color = NativeWindowDraw::rgb2color(0, 31, 31);
+		const int size = 10;
+
 		const char* dat = mBuf[0].data;
 		for (int n=0; n < NumPoints(); n++) {
 			const Point* p = (Point*) dat;
 
 			// Getting coordinates
-			int x = (p->pos.x + p->pos.y/2 + 50) * 10;
-			if (x > buffer->width) {
-				x = buffer->width - 1;
-			} else if (x < 0) {
-				x = 0;
-			}
+			int x = (p->pos.x + 30) * 10;
+			int y = (p->pos.y + 30) * 10;
+			//const int depth = p->pos.z + 30;
+			///const int size = depth > 0 ? 100/depth : 1;
 
-			int y = (p->pos.z + p->pos.y/2+ 20) * 10;
-			if (y > buffer->height) {
-				y = buffer->height - 1;
-			} else if (y < 0) {
-				y = 0;
-			}
+			const DWORD clr = p->clr;
+			//const int color = NativeWindowDraw::rgb2color(RED(clr)*32, GRN(clr)*32, BLUE(clr)*32);
 
 			// Actual drawing
-			uint16_t* line = pixels + y*buffer->stride;
-			line[x] = 0xFFFF;
+			//NativeWindowDraw::drawCircle(*buffer, x, y, size, color, 1);
 		    //LOGI("====== draw(%d, %d)\n", x, y);
+			//NativeWindowDraw::drawPixel(*buffer, x, y, color, 0.4);
 
 			dat += mBuf[0].stride;
 		}
@@ -129,6 +124,7 @@ static void engine_draw_frame(struct engine* engine) {
         return;
     }
 
+    /*
     ANativeWindow_Buffer buffer;
     if (ANativeWindow_lock(engine->app->window, &buffer, NULL) < 0) {
         LOGW("Unable to lock window buffer");
@@ -139,6 +135,7 @@ static void engine_draw_frame(struct engine* engine) {
     psys.Draw ( &view_matrix[0], 0.55 );			// Draw particles
 
     ANativeWindow_unlockAndPost(engine->app->window);
+    */
 
 }
 
@@ -183,9 +180,10 @@ static void engine_handle_cmd(struct android_app* app, int32_t cmd) {
 void android_main(struct android_app* state) {
     static int init;
 
-    struct engine engine;
+    GraphicsService service(state);
+    service.start();
 
-    const int psys_nmax = 2048;
+    struct engine engine;
 
     Vector3DF	obj_from, obj_angs;
 	obj_from.x = 0;		obj_from.y = 0;		obj_from.z = 20;		// emitter

@@ -25,7 +25,6 @@
 							</tool>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.918672441" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1891527105" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;D:\Work\SDK\android-ndk-r8\platforms\android-4\arch-arm\usr\include\&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\Work\SDK\android-ndk-r8\sources\cxx-stl\stlport\stlport\&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\Work\SDK\android-ndk-r8\sources\android\native_app_glue\&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\Work\SDK\android-ndk-r8\platforms\android-14\arch-arm\usr\include\&quot;"/>
@@ -34,7 +33,6 @@
 							</tool>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.1339340596" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1753675054" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;D:\Work\SDK\android-ndk-r8\platforms\android-4\arch-arm\usr\include\&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\Work\SDK\android-ndk-r8\sources\cxx-stl\stlport\stlport\&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\Work\SDK\android-ndk-r8\sources\android\native_app_glue\&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\Work\SDK\android-ndk-r8\platforms\android-14\arch-arm\usr\include&quot;"/>
