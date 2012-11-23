@@ -1,11 +1,9 @@
 #include "GraphicsService.h"
 
-#define __ANDROID__ 1
-
 #include <EGL/eglplatform.h>
 #include <EGL/egl.h>
 #include <GLES/gl.h>
-#include <GLES/glext.h>
+//#include <GLES/glext.h>
 
 #include "log.h"
 
@@ -17,6 +15,9 @@ GraphicsService::GraphicsService( android_app* application )
 	  mContext( EGL_NO_CONTEXT )
 {}
 
+GraphicsService::~GraphicsService()
+{
+}
 
 const char* GraphicsService::getPath( void )
 {
@@ -33,7 +34,7 @@ const int32_t& GraphicsService::getWidth( void )
 	return mHeight;
 }
 
-void GraphicsService::start( void )
+void GraphicsService::start()
 {
 	EGLint format, numConfigs, errorResult, major, minor;
 	EGLConfig config;
@@ -117,6 +118,11 @@ void GraphicsService::start( void )
 
 	ERROR:
 		stop( );
+}
+
+void GraphicsService::stop()
+{
+
 }
 
 /*

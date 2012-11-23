@@ -3,8 +3,10 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE 	:= andfluids
-LOCAL_LDLIBS    := -lm -llog -landroid
-LOCAL_CFLAGS    := -Werror -g -ggdb -O0
+LOCAL_LDLIBS    := -lEGL -lGLESv2 -lm -llog -landroid
+LOCAL_CFLAGS    := -Werror -g -ggdb -O0 \
+		-DANDROID_NDK \
+                -DDISABLE_IMPORTGL
 
 LOCAL_SRC_FILES := main.cpp
 FILE_LIST := $(wildcard $(LOCAL_PATH)/fluids/common/*.cpp)

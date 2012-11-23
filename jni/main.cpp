@@ -21,6 +21,8 @@
 
  */
 
+#define __ANDROID__ 1
+
 #include <android_native_app_glue.h>
 #include <android/native_window.h>
 #include <android/input.h>

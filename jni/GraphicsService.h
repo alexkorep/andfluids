@@ -9,14 +9,14 @@ class GraphicsService
 public:
 	GraphicsService( android_app* application );
 
-	~GraphicsService( void );
+	virtual ~GraphicsService();
 
 	const char* getPath( void );
 	const int32_t& getHeight( void );
 	const int32_t& getWidth( void );
 
-	void start( void );
-	void stop( void );
+	void start();
+	void stop();
 	//status update( void );
 	//void renderContext( void );
 

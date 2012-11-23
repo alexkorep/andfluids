@@ -28,6 +28,10 @@
 									<listOptionValue builtIn="false" value="&quot;D:\Work\SDK\android-ndk-r8\sources\cxx-stl\stlport\stlport\&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\Work\SDK\android-ndk-r8\sources\android\native_app_glue\&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\Work\SDK\android-ndk-r8\platforms\android-14\arch-arm\usr\include\&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\Work\SDK\android-ndk-r8\platforms\android-14\arch-arm\usr\include\EGL\&quot;"/>
+								</option>
+								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.110307969" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__ANDROID__"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.699912306" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
@@ -36,6 +40,9 @@
 									<listOptionValue builtIn="false" value="&quot;D:\Work\SDK\android-ndk-r8\sources\cxx-stl\stlport\stlport\&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\Work\SDK\android-ndk-r8\sources\android\native_app_glue\&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\Work\SDK\android-ndk-r8\platforms\android-14\arch-arm\usr\include&quot;"/>
+								</option>
+								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.2046391342" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__ANDROID__"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1772875075" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
@@ -58,4 +65,5 @@
 	<storageModule moduleId="refreshScope" versionNumber="1">
 		<resource resourceType="PROJECT" workspacePath="/AndFluids"/>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>
